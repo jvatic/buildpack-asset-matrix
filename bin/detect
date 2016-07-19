@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+set -e
+
+build=$(cd "$1/" && pwd)
+
+if test -f "${build}/assets/compile.go"
+then
+  echo AssetMatrix
+  exit 0
+else
+  exit 1
+fi
